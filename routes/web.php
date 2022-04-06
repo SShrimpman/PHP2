@@ -22,3 +22,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('audi','audiController@index');
+
+Route::get('/players', 'PlayerController@index');
+
+

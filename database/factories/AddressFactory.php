@@ -9,7 +9,7 @@ $factory->define(Address::class, function (Faker $faker) {
     return [
         'address' =>$faker->streetAddress,
         'city' =>$faker->city,
-        'country' =>$faker->country,
+        'country_id' =>rand(1,140),
         'postal_code' =>$faker->postcode,
     ];
 });
