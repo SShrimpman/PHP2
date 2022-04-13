@@ -1,18 +1,28 @@
-<table style="border: 1px solid black">
-    <tr style="border: 1px solid black">
-        <th style="border: 1px solid black">ID</th>
-        <th style="border: 1px solid black">Name</th>
-        <th style="border: 1px solid black">Birth Date</th>
-        <th style="border: 1px solid black">Created At</th>
-        <th style="border: 1px solid black">Updated At</th>
+<table class="table table-striped table-dark">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Birth Date</th>
+        <th>Created At</th>
+        <th >Updated At</th>
+        <th>Car</th>
     </tr>
     @foreach($players as $player)
-        <tr style="border: 1px solid black">
-            <th style="border: 1px solid black">{{$player->id}}</th>
-            <th style="border: 1px solid black">{{$player->name}}</th>
-            <th style="border: 1px solid black">{{$player->birth_date}}</th>
-            <th style="border: 1px solid black">{{$player->created_at}}</th>
-            <th style="border: 1px solid black">{{$player->updated_at}}</th>
+        <tr>
+            <th>{{$player->id}}</th>
+            <th>{{$player->name}}</th>
+            <th>{{$player->birth_date}}</th>
+            <th>{{$player->created_at}}</th>
+            <th>{{$player->updated_at}}</th>
+            <th>
+                @foreach($player->cars as $car)
+                   <p>{{$car->name}}</p>
+                @endforeach
+            </th>
+            <th>
+                {{$player->address->address}}
+                {{$player->address->country->name}}
+            </th>
         </tr>
     @endforeach
 </table>
